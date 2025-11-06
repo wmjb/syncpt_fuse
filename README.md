@@ -1,5 +1,7 @@
 # syncpt_fuse
 bind /sys/devices/platform/tegra_grhost/syncpt/ to /sys/bus/nvhost/devices/host1x/syncpt using FUSE
+as user to enable non sudo access and before xserver start.
+
 
 build..
 

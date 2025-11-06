@@ -29,6 +29,7 @@ WantedBy=multi-user.target
 ```
 
 sudo systemctl daemon-reload
+
 sudo systemctl enable syncpt-setup.service
 
 sudo nano /etc/systemd/system/syncpt-fuse.service
@@ -53,5 +54,8 @@ sudo nano /usr/local/bin/run_syncpt_fuse.sh
 mkdir -p /tmp/fake_sysfs/bus/nvhost/devices/host1x
 exec /usr/local/bin/syncpt_fuse -f -o allow_other,nonempty /tmp/fake_sysfs/bus/nvhost/devices/host1x
 ```
+sudo chmod +x /usr/local/bin/run_syncpt_fuse.sh
+
 sudo systemctl daemon-reload
+
 sudo systemctl enable syncpt-fuse.service

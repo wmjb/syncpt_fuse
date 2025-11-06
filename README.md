@@ -6,7 +6,7 @@ build..
 gcc -D_FILE_OFFSET_BITS=64 -Wall syncpt_fuse.c -o /usr/local/bin/syncpt_fuse -lfuse
 
 sudo nano /etc/systemd/system/syncpt-setup.service
------
+```
 [Unit]
 Description=Early syncpt FUSE setup
 DefaultDependencies=no
@@ -26,13 +26,13 @@ RemainAfterExit=yes
 
 [Install]
 WantedBy=multi-user.target
------
+```
 
 sudo systemctl daemon-reload
 sudo systemctl enable syncpt-setup.service
 
 sudo nano /etc/systemd/system/syncpt-fuse.service
------
+```
 [Unit]
 Description=Syncpt FUSE Emulation
 After=local-fs.target
@@ -45,13 +45,13 @@ User=root
 
 [Install]
 WantedBy=multi-user.target
------
+```
 
 sudo nano /usr/local/bin/run_syncpt_fuse.sh
-------
+```
 #!/bin/bash
 mkdir -p /tmp/fake_sysfs/bus/nvhost/devices/host1x
 exec /usr/local/bin/syncpt_fuse -f -o allow_other,nonempty /tmp/fake_sysfs/bus/nvhost/devices/host1x
-------
+```
 sudo systemctl daemon-reload
 sudo systemctl enable syncpt-fuse.service

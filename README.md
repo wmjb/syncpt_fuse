@@ -4,7 +4,7 @@ as user to enable non sudo access and before xserver start.
 
 useful when propriatary userspace drivers expect syncpt to be in other sysfs location to what kernel driver creates
 
-in the case of 2.6 compatibility layer on 4.4 kernel, hos1x is used as a device name but not registered, so a simple dummy sysfs entry can not be created with kernel driver.
+in the case of 2.6 compatibility layer on 4.4 kernel, host1x is used as a device name but not registered, so a simple dummy sysfs entry can not be created with kernel driver.
 
 build..
 
